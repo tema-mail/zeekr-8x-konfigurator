@@ -37,7 +37,7 @@ document.querySelector('[data-z9]').addEventListener('zeekr:lead', e => send(e.d
 ## Как обновить данные
 Инструменты в `tools/` (нужны Python 3, Playwright, Pillow; запросы идут с российского или китайского адреса –
 zeekrlife.com не отвечает адресам из Европы):
-1. `sniat-opcii.py 11 GMY_Z012_01` – открывает страницу заказа 9X и снимает версии и опции через их API → `z9x-raw.json`;
+1. `sniat-opcii.py 11 GMY_Z012_01` – открывает страницу заказа модели и снимает версии и опции через их API → `z9x-raw.json`;
 2. `svod.py z9x-raw.json model.json` – правила совместимости и список нужных кадров → `model.json`;
 3. `skachat.py model.json 11 raw` – скачивает кадры в `raw/` (6 потоков, повторы, ракурсы ищутся по всем версиям);
 4. `kadry.py raw img/zeekr-8x` – WebP; `ikonki-dekora.py model.json img/zeekr-8x` – иконки декора из рендеров;
